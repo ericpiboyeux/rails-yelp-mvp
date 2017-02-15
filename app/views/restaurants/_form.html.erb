@@ -2,9 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :adress %>
-    <%= f.input :phone %>
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :address, label: "Adresse" %>
+    <%= f.input :phone_number %>
     <%= f.input :category, collection: Restaurant.categories %>
   </div>
 

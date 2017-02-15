@@ -17,8 +17,8 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.adress %></td>
-        <td><%= restaurant.phone %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.phone_number %></td>
         <td><%= restaurant.category %></td>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>

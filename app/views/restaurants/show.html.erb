@@ -6,20 +6,36 @@
 </p>
 
 <p>
-  <strong>Adress:</strong>
-  <%= @restaurant.adress %>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @restaurant.phone %>
+  <%= @restaurant.phone_number %>
 </p>
 
 <p>
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </p>
-
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Write a review', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
+
+
+
+<% @restaurant.reviews.each do |review| %>
+<div class="cardReview">
+      <div><%= review.content %></div>
+      <div>
+        <% stars = review.rating.to_i %>
+        <% stars.times do %>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        <% end %>
+        <% (5 - stars).times do %>
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        <% end %>
+      </div>
+</div>
+<% end %>

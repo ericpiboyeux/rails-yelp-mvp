@@ -3,7 +3,7 @@ class Restaurant < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
-  validates :adress, presence: true
+  validates :address, presence: true
   validates :category, inclusion: { in: @categories, allow_nil: true }
 
   def self.categories
